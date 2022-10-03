@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Admin Only
+{% endblock %}
+
+{% block main %}
+    <div class="table-responsive">
+        <table class="table table-light table-hover mt-3">
+            <thead>
+                <tr>
+                    <th>Submission Time</th>
+                    <th>name</th>
+                    <th>Age</th>
+                    <th>Goal</th>
+                    <th>Favourite Category</th>
+                    <th>Gmail</th>
+                    <th>Mobile Number</th>
+                </tr>
+            </thead>
+            <!--loop over each user row-->
+            <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user[0] }}</td>
+                        <td>{{ user[1] }}</td>
+                        <td>{{ user[2] }}</td>
+                        <td>{{ user[3] }}</td>
+                        <td>{{ user[4] }}</td>
+                        <td>{{ user[5] }}</td>
+                        <td>{{ user[6] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="mx-4">
+        <a href="/add" class="btn btn-primary me-3">Add blog</a>
+        <a href="/remove" class="btn btn-primary">Remove blog</a>    
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Password Check
+{% endblock %}
+
+{% block main %}
+    <form action="/check" method="post" class="mx-auto col-md-4 col-4 my-5">
+        <div class="mb-3">
+            <label class="text-light" for="pass">Enter your password:</label>
+            <input type="password" placeholder="Password" name="pass" id="pass"  class="form-control" autofocus>
+        </div>
+
+        <div class="mb-3">
+            <label class="text-light" for="page">Requested page:</label>
+            <select class="form-select w-100" name="page-selected">
+                <option value="user-info">Users Info.</option>
+                <option value="new-blog">Add Blogs</option>
+                <option value="rem-blog">remove Blogs</option>
+            </select>
+        </div>
+        
+        <div class="col-md-12 text-center">
+            <button class="btn btn-primary w-auto" type="submit">Confirm</button>
+        </div>
+    </form>
+{% endblock %}

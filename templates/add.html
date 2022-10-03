@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    add blogs
+{% endblock %}
+
+{% block main %}
+    <form action="/add" method="post" class=" row my-4 mx-auto w-50">
+        <div class="col-md-12 col-12 mb-3">
+            <input type="text" placeholder="header" class="form-control" name="head" autofocus>
+        </div>
+
+        <div class="col-md-12 col-12 mb-3">
+            <textarea placeholder="body" class="form-control" name="body"></textarea>
+        </div>
+
+        <div class="col-md-12 col-12 mb-4 d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary w-auto">Add blog</button>
+            <a href="/remove" class="btn btn-danger ms-3">Remove blog</a>
+        </div>
+    </form>
+    <div class="text-center">
+        <a href="/users" class="btn btn-primary">Users info</a>
+    </div>
+{% endblock %}

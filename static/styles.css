@@ -1,0 +1,27 @@
+body {
+    background-color: black;
+}
+
+/*nav bar links*/
+.links {
+    color: white;
+    text-decoration: none;
+}
+
+.links:hover, a.f_links:hover, .media:hover {
+    color: #A7171A;
+}
+
+.f_links {
+    color: #00FFFF;
+    text-decoration: none;
+}
+
+.bg-img {
+    background-image: url("main.jpg");
+    min-height: 85vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}

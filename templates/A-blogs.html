@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Blogs
+{% endblock %}
+
+{% block main %}
+    <div class="container justify-content-center">
+        {% for blog in blogs %}
+            <div class="row row-cols-1 w-75 mx-auto my-4 border-bottom border-1">
+                <div class="col-12 col-md-9">
+                    <h3 class="text-uppercase" style="color: #e43c26">#{{loop.index}}: {{ blog[1] }}</h3>
+                    <p class="text-light text-break fs-5">{{ blog[2] }}</p>
+                </div>
+
+                <div class="col-12 col-md-2">
+                    <form action="/remove" method="post">
+                        <button type="submit" class="btn btn-danger mb-4" name="id" value="{{ blog[0] }}">remove</button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="mx-4">
+        <a href="/add" class="btn btn-primary me-3">Add blog</a>
+        <a href="/users" class="btn btn-primary">Users info</a>    
+    </div>
+{% endblock %}

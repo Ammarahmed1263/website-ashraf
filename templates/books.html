@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy Books
+{% endblock %}
+
+{% block style %}
+    <link href="/static/books.css" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+    <h1 class="text-center mt-1 mb-4">Our E-books</h1>
+    <!--cards starts here-->
+    <div class="row g-0">
+        <!--first card-->
+        <div class="col-9 col-md-4 mx-auto">
+            <div class="custom-card">
+                <img class="c-img" src="static/front lever.png" alt="front lever book cover">
+                
+                <div class="c-body">
+                    <h2 class="c-title" id="front lever">front lever</h2>
+                    <P class="c-subtitle">price: 30$</P>
+                    <div class="c-info">
+                        <p class="c-text"><span>This e-book contains :</span> 5 different levels to help you master front lever.</p>
+                        <p class="c-text"><span>Requirements :</span> 20 Pull ups;30 abs crunches;20 Dips.</p>
+                        <p class="c-text"><span>Equipments needed :</span> dips bar or pullup bar</p>
+                        <p class="c-text"><span>Languages :</span> Arabic</p>
+                        <p class="c-text"><span>Also this program</span> includes photos to 
+                        understand the execution of the exercises.</p>
+                    </div>
+                    
+                    <button class="c-btn" name="Front Lever" id="Front Lever" value="Front Lever" onclick="document.getElementById('custom').style.display='block'">Buy Book</button>
+                </div>
+            </div>
+        </div>
+        
+        <!--second card-->
+        <div class="col-9 col-md-4 mx-auto">
+            <div class="custom-card">
+                <img class="c-img" src="static/iron cross.jpg" alt="iron cross book cover">
+                
+                <div class="c-body">
+                    <h2 class="c-title">iron cross</h2>
+                    <P class="c-subtitle">price: 30$</P>
+                    <div class="c-info">
+                        <p class="c-text"><span>This e-book contains :</span> conditioning + 4 different levels to be professional at iron cross.</p>
+                        <p class="c-text"><span>Requirements :</span> 20 Pull ups;50 pushups;30 Dips.</p>
+                        <p class="c-text"><span>Equipments needed :</span> gymnastics rings and dumbells</p>
+                        <p class="c-text"><span>Languages :</span> Arabic</p>
+                        <p class="c-text"><span>Also this program</span> includes photos to 
+                        understand the execution of the exercises.</p>
+                    </div>
+                    
+                    <button class="c-btn" name="Iron Cross" id="Iron Cross" value="Iron Cross" onclick="document.getElementById('custom').style.display='block'">Buy Book</button>
+                </div>
+            </div>
+        </div>          
+    
+        <!--third card-->
+        <div class="col-9 col-md-4 mx-auto">
+            <div class="custom-card">
+                <img class="c-img" src="static/coming soon.jpg">
+                <div class="c-body">
+                    <h2 class="c-title">new e-book</h2>
+                    <P class="c-subtitle">price: ???</P>
+                    <p class="c-text"><b>COMING SOON....</b></p>
+                </div>
+            </div>
+        </div>          
+    </div>
+    <!--cards ends here-->
+
+
+    <!--my modal-->
+    <div class="modal hidden" id="custom">        
+        <!--modal content-->
+        <form action="/books" method="post" class="modal-content animate">
+            <div class="container">
+                <h5 class="mod-txt">CONFIRMATION FORM</h5>
+                <span onclick="document.getElementById('custom').style.display='none'" class="close">x</span>
+                <br>
+                <label class="mod-txt" for="book-name">Book:</label>
+                <input type="text" id="book-name" name="book-name" readonly>
+    
+                <label class="mod-txt" for="book-price">Price:</label>
+                <input type="text" id="book-price" name="book-price" value="30 Dollars" readonly>
+            
+                <label class="mod-txt" for="user-email">Your E-mail:</label>
+                <input type="email" id="user-email" name="user-email">
+                <br>
+                <button type="submit">confirm purchase</button>
+                <button type="button" onclick="document.getElementById('custom').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
+            
+        </form>
+    </div>
+
+    <script>
+        var modal = document.getElementById('custom');
+        window.onclick = function (event) {
+            if(event.target == modal)
+            {
+                modal.style.display = "none";
+            }
+        }
+        //L1 save modal(not modal content) div in modal var
+        /*L3 window.onclick when user click on screen----function (event) The event object is
+        always passed to the handler and contains a lot of useful information what has happened*/
+        //L4 event.target return element started that event(button in this case)
+        //L5 if area clicked isn't modal-content change modal display to none
+
+        document.getElementById('Iron Cross').addEventListener('click', function(){
+            document.getElementById('book-name').value = document.getElementById('Iron Cross').value
+            });
+        //when iron cross book is clicked put its value in book text field
+        document.getElementById('Front Lever').addEventListener('click', function(){
+        document.getElementById('book-name').value = document.getElementById('Front Lever').value
+        });
+        //when front lever book ~ ~ ~ ~
+    </script>
+
+
+
+{% endblock %}

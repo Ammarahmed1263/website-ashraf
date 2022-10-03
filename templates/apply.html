@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apply Here
+{% endblock %}
+
+{% block style%}
+    <link href="/static/apply.css" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+    <h4 class="text-center text-info w-50 mx-auto mt-4">Kindly fill in the online coaching registration form below and we will contact you back.</h4>
+    <form action="/apply" method="post" class="row my-4 mx-auto w-50">
+        <div class="col-md-6 col-6 mb-4">
+            <input class="form-control" type="text" placeholder="First Name" name="name" autofocus>
+        </div>
+
+        <div class="col-md-6 col-6 mb-4">
+            <input class="form-control" type="text" placeholder="Last Name" name="name2">
+        </div>
+
+        <div class="col-md-6 col-12 mb-4">
+            <input class="form-control" type="email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" placeholder="willmith@example.com" name="email">
+        </div>
+
+        <div class="col-md-6 col-12 mb-4">
+            <input class="form-control" type="tel" placeholder="Phone Number(01xxxxxxxx)" name="number" pattern="^01[0125][0-9]{8}$">
+        </div>
+
+        <div class="col-md-6 col-12 mb-4">
+            <select class="form-select" name="goal">
+                <option value="Goal" selected>--Select Current Goal--</option>
+                <option value="Lose weight">Lose fat</option>
+                <option value="Build Muscle">Build Muscle</option>
+                <option value="Both">Both</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+        
+        <div class="col-md-6 col-12 mb-4">
+            <input class="form-control" type="number" placeholder="Age" min="10" max="105" name="age">
+        </div>
+        
+        <div class="col-md-12 col-12 mb-4">
+            <select class="form-select w-100" name="category">
+                <option value="Category" selected>--Select Favourite Category--</option>
+                <option value="Freestyle">Freestyle</option>
+                <option value="Strength">Strength</option>
+                <option value="Power">Power</option>
+            </select>
+        </div> 
+        
+        <div class="col-md-12 text-center">
+            <button class="btn btn-danger w-auto" type="submit">Apply</button>
+        </div>
+    </form>
+{% endblock %}
