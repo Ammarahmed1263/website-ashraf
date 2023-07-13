@@ -16,4 +16,4 @@ pipenv==2022.9.24
 platformdirs==2.5.2
 virtualenv==20.16.5
 virtualenv-clone==0.5.7
-Werkzeug==2.2.3
+Werkzeug==2.3.3
